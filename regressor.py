@@ -1,6 +1,7 @@
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.base import BaseEstimator
 
+
 class Regressor(BaseEstimator):
     def __init__(self):
         self.clf = GradientBoostingRegressor(n_estimators=200, max_features="sqrt", max_depth=5)
