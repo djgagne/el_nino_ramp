@@ -10,12 +10,7 @@ class FeatureExtractor(object):
     def transform(self, temperatures_xray, n_burn_in, n_lookahead, skf_is):
         """Use world temps as features."""
         # Set all temps on world map as features
-        lat_bottom = -80
-        lat_top = 80
-        lon_left = 80
-        lon_right = 320
-        #all_temps = temperatures_xray['tas'].values
-        all_temps = temperatures_xray['tas'].loc[:, lat_bottom:lat_top, lon_left:lon_right].values
+        all_temps = temperatures_xray['tas'].values
         print all_temps.shape
         time_steps, lats, lons = all_temps.shape
         all_temps = all_temps.reshape((time_steps,lats*lons))
